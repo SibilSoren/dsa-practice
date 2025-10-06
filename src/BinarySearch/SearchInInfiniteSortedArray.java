@@ -1,0 +1,30 @@
+package BinarySearch;
+
+public class SearchInInfiniteSortedArray {
+    static void main() {
+
+    }
+
+    static int search(int[] nums, int target){
+        int start = 0;
+        int end = 1;
+        while(nums[end] < target){
+            int newStart= end + 1;
+            end = end + (end - start + 1) * 2;
+            start = newStart;
+        }
+        while(start <= end){
+            int mid = start + ((end - start)/2);
+            if(nums[mid] == target){
+                return mid;
+            }
+            else if(nums[mid] < target){
+                start = mid + 1;
+                end = end * 2;
+            }else{
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+}
