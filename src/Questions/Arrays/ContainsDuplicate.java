@@ -9,7 +9,7 @@ public class ContainsDuplicate {
     static void main() {
 
     }
-
+//    https://leetcode.com/problems/contains-duplicate/description/
     static boolean containsDuplicate(int[] nums){
         Set<Integer> set = new HashSet<>();
         for(int i = 0; i < nums.length; i++){
